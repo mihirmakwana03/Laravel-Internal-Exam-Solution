@@ -32,9 +32,7 @@ Route::get("/loginUser/{id}/{pass}", [loginController::class, "login"]);
 //Q3
 use App\Http\Controllers\DBcontroller;
 Route::get('/customer', [DBcontroller::class, 'showUser']);
-Route::get('/insert', function () {
-    return view("customer");
-});
+Route::view('/insert', 'customer');
 Route::post('/inserted', [DBcontroller::class, 'insert']);
 Route::post('/searchName', [DBcontroller::class, 'searchName']);
 
